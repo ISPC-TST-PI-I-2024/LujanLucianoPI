@@ -1,4 +1,5 @@
-dos herramientas fundamentales en el mundo del desarrollo de software y más allá. Git, un Sistema de Control de Versiones Distribuido, facilita el seguimiento de cambios en el código, la colaboración y el intercambio entre equipos. Por otro lado, GitHub amplifica el poder de Git al proporcionar una plataforma en línea que simplifica aún más la colaboración y la gestión de proyectos.
+
+El curso "The Basics of GitHub" ofrece una introducción concisa pero completa a Git y GitHub, dos herramientas fundamentales en el mundo del desarrollo de software y más allá. Git, un Sistema de Control de Versiones Distribuido, facilita el seguimiento de cambios en el código, la colaboración y el intercambio entre equipos. Por otro lado, GitHub amplifica el poder de Git al proporcionar una plataforma en línea que simplifica aún más la colaboración y la gestión de proyectos.
 
 El flujo de trabajo de GitHub es una metodología ligera que permite experimentar y colaborar en proyectos sin el riesgo de perder el trabajo anterior. El uso de repositorios, ramas, commits y pull requests se convierte en la columna vertebral de este flujo de trabajo, permitiendo a los desarrolladores trabajar de manera segura y eficiente.
 
