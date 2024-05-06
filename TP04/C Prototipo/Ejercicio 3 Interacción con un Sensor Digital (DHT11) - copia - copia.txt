@@ -1,0 +1,114 @@
+Objetivos:
+
+Integrar y configurar el sensor de temperatura y humedad DHT11 con Arduino.
+
+Leer datos digitales de un sensor ambiental.
+
+Interpretar y procesar datos de temperatura y humedad.
+
+Mostrar los datos procesados en el monitor serie y simular esta configuración en Proteus.
+
+Desarrollo:
+
+1. Conectar el sensor DHT11 a un pin digital en el Arduino:
+
+Conecte el pin de datos del DHT11 (pin 2) a un pin digital del Arduino (por ejemplo, pin 2).
+
+Conecte el pin de alimentación del DHT11 (pin VCC) a la alimentación de 5V del Arduino.
+
+Conecte el pin de tierra del DHT11 (pin GND) a la tierra del Arduino.
+
+2. Utilizar una biblioteca adecuada para leer los datos de temperatura y humedad del sensor:
+
+Descargue e instale la biblioteca DHT para Arduino.
+
+Incluya la biblioteca DHT en su código Arduino:
+
+C++
+#include <DHT.h>
+Usa el código con precaución.
+content_copy
+Defina el pin al que está conectado el DHT11:
+C++
+#define DHTPIN 2
+#define DHTTYPE DHT11
+Usa el código con precaución.
+content_copy
+Cree una instancia de la biblioteca DHT:
+C++
+DHT dht(DHTPIN, DHTTYPE);
+Usa el código con precaución.
+content_copy
+3. Programar el Arduino para enviar estos datos al monitor serie, mostrando la temperatura y la humedad ambiental:
+
+C++
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  // Leer datos de temperatura y humedad
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  // Verificar si la lectura fue exitosa
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("Falla al leer los datos del DHT11!");
+    return;
+  }
+
+  // Mostrar los datos en el monitor serie
+  Serial.print("Humedad: ");
+  Serial.print(humidity, 1);
+  Serial.print("% ");
+  Serial.print("Temperatura: ");
+  Serial.print(temperature, 1);
+  Serial.println("ºC");
+
+  delay(2000); // Esperar 2 segundos antes de la siguiente lectura
+}
+Usa el código con precaución.
+content_copy
+4. Configurar el simulador Proteus para modelar esta interacción, utilizando representaciones visuales de los datos recibidos del DHT11:
+
+Crear un nuevo proyecto Proteus.
+
+Agregar los componentes necesarios:
+
+Arduino Uno (o placa Arduino compatible)
+
+Sensor DHT11
+
+Pantalla LCD (o LED para mostrar datos simplificados)
+
+Conectar los componentes como en la configuración real.
+
+Programar el microcontrolador Arduino en Proteus (similar al código Arduino anterior).
+
+Utilizar el monitor de comunicaciones en Proteus para observar los datos enviados desde el Arduino.
+
+Crear representaciones visuales en Proteus para mostrar la temperatura y la humedad (por ejemplo, indicadores gráficos o valores numéricos en la pantalla LCD).
+
+Recursos adicionales:
+
+Biblioteca DHT para Arduino [se quitó una URL no válida]
+Simulador Proteus [se quitó una URL no válida]
+Ejemplos de código DHT11 en Proteus [se quitó una URL no válida]
+Importante:
+
+Asegúrese de conectar correctamente el sensor DHT11 al Arduino y de utilizar la biblioteca DHT adecuada para su tipo de sensor.
+
+Configure correctamente el simulador Proteus para que coincida con la configuración real de hardware.
+
+Verifique que los datos leídos del sensor se correspondan con los valores esperados y que las representaciones visuales en Proteus funcionen correctamente.
+
+
+
+
+tune
+
+share
+
+
+more_vert

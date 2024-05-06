@@ -1,0 +1,24 @@
+Para este ejercicio, puedes seguir estos pasos para leer los valores analógicos de un potenciómetro y visualizarlos en el monitor serie:
+
+```cpp
+void setup() {
+  Serial.begin(9600); // Iniciar la comunicación serial
+}
+
+void loop() {
+  int sensorValue = analogRead(A0); // Leer el valor analógico del potenciómetro
+  Serial.println(sensorValue); // Enviar el valor leído al monitor serie
+  delay(100); // Esperar un breve período de tiempo antes de volver a leer
+}
+```
+
+En este código, utilizamos `analogRead(A0)` para leer el valor analógico del pin A0, al que está conectado el potenciómetro. Luego, imprimimos este valor en el monitor serie con `Serial.println(sensorValue)`.
+
+Ahora, para simular la conexión y lectura del potenciómetro en Proteus, sigue estos pasos:
+
+1. Abre Proteus y crea un nuevo diseño.
+2. Agrega un Arduino y un potenciómetro desde la librería de componentes.
+3. Conecta uno de los extremos del potenciómetro al pin A0 del Arduino.
+4. Ejecuta la simulación.
+
+Con estos pasos, podrás ver los valores del potenciómetro en tiempo real en Proteus. Cuando gires el potenciómetro, deberías ver cambios en los valores mostrados en el monitor serie de Proteus. Esto te permitirá verificar que la lectura del sensor resistivo funciona correctamente.

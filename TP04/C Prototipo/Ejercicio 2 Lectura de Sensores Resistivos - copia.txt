@@ -1,0 +1,92 @@
+Ejercicio 2: Lectura de Sensores Resistivos
+
+Objetivos:
+
+Aprender a leer valores analógicos de un potenciómetro.
+
+Convertir valores analógicos en datos digitales comprensibles.
+
+Visualizar y monitorear cambios en el valor del potenciómetro a través del monitor serie.
+
+Simular la conexión y lectura de un sensor resistivo en Proteus.
+
+Desarrollo:
+
+1. Conectar un potenciómetro a un pin analógico del Arduino:
+
+Conecte un extremo del potenciómetro al pin de entrada analógica del Arduino (por ejemplo, pin A0).
+
+Conecte el otro extremo del potenciómetro a la alimentación de 5V del Arduino.
+
+Conecte el terminal central del potenciómetro a tierra (GND) del Arduino.
+
+2. Utilizar la función analogRead() para leer los valores del potenciómetro:
+
+C++
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Leer el valor del potenciómetro
+  int sensorValue = analogRead(A0);
+
+  // Convertir el valor analógico a un rango de 0 a 100
+  float voltage = sensorValue * (5.0 / 1023.0);
+  float percentage = (voltage / 5.0) * 100.0;
+
+  // Mostrar los valores en el monitor serie
+  Serial.print("Valor analógico: ");
+  Serial.println(sensorValue);
+  Serial.print("Voltaje: ");
+  Serial.println(voltage, 2);
+  Serial.print("Porcentaje: ");
+  Serial.println(percentage, 2);
+  Serial.println();
+
+  delay(100); // Esperar 100 milisegundos antes de la siguiente lectura
+}
+Usa el código con precaución.
+content_copy
+3. Implementar un sistema de visualización en Proteus para representar los valores leídos del potenciómetro:
+
+Crear un nuevo proyecto Proteus.
+
+Agregar los componentes necesarios:
+
+Arduino Uno (o placa Arduino compatible)
+
+Potenciómetro
+
+Pantalla LCD (o LED para mostrar datos simplificados)
+
+Conectar los componentes como en la configuración real.
+
+Programar el microcontrolador Arduino en Proteus (similar al código Arduino anterior).
+
+Utilizar el monitor de comunicaciones en Proteus para observar los datos enviados desde el Arduino.
+
+Crear representaciones visuales en Proteus para mostrar el valor del potenciómetro (por ejemplo, indicadores gráficos o valores numéricos en la pantalla LCD).
+
+Recursos adicionales:
+
+Introducción a los sensores analógicos en Arduino [se quitó una URL no válida]
+Simulador Proteus [se quitó una URL no válida]
+Ejemplos de código de potenciómetro en Proteus [se quitó una URL no válida]
+Importante:
+
+Asegúrese de conectar correctamente el potenciómetro al Arduino y de utilizar la función analogRead() correctamente.
+
+Configure correctamente el simulador Proteus para que coincida con la configuración real de hardware.
+
+Verifique que los datos leídos del potenciómetro se correspondan con los valores esperados y que las representaciones visuales en Proteus funcionen correctamente.
+
+
+
+
+tune
+
+share
+
+
+more_vert

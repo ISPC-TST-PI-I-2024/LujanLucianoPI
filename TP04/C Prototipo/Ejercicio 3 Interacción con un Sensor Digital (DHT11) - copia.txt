@@ -1,0 +1,32 @@
+Para realizar este ejercicio, primero necesitas conectar el sensor DHT11 al Arduino y luego programarlo para leer los datos del sensor y mostrarlos en el monitor serie. Aquí tienes un ejemplo básico de cómo podrías hacerlo
+
+```cpp
+#include dht.h
+
+#define DHTPIN 2   El pin digital al que está conectado el sensor DHT11
+#define DHTTYPE DHT11   Tipo de sensor DHT que estás utilizando
+
+dht DHT;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int chk = DHT.read11(DHTPIN);   Leer los datos del sensor
+
+  Serial.print(Temperatura );
+  Serial.print(DHT.temperature);
+  Serial.print(°C - Humedad );
+  Serial.print(DHT.humidity);
+  Serial.println(%);
+
+  delay(2000);   Esperar un poco antes de volver a leer los datos
+}
+```
+
+Este es un código simple que utiliza la biblioteca DHT para leer los datos del sensor DHT11. Asegúrate de haber instalado la biblioteca antes de compilar este código.
+
+Ahora, para configurar la simulación en Proteus, necesitarás tener una representación del Arduino y del sensor DHT11 en tu diseño. Luego, conecta el pin del sensor al pin digital que has especificado en el código Arduino. Finalmente, ejecuta la simulación y verifica que los datos se muestren correctamente en Proteus.
+
+Recuerda que Proteus te permite simular la interacción del Arduino con otros componentes, por lo que deberías ser capaz de ver los datos de temperatura y humedad en tiempo real mientras la simulación se ejecuta.
