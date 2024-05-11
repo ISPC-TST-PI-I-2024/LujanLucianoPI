@@ -42,7 +42,7 @@ void loop() {
       Serial.read();
     }
   }
-  if(valorIngresado == 1 || entrada2 == HIGH){
+  if(valorIngresado == 1 || entrada1 == HIGH){
      Serial.println(" encendiendo rele 1 ");
      digitalWrite(salida1, HIGH);
   } else if(valorIngresado == 3 || entrada3 == HIGH){
